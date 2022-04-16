@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+	<head>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<title>Raagam - Delete Songs</title>
+	</head>
+<body>
+	<h1 class="text-6xl text-center font-bold pt-10">Delete song</h1>
+	<div class="flex item-center justify-center rounded-xl">
+		<form class=" my-10 grid grid-cols-2 gap-5 bg-gray-100 p-5 w-fit justify-items-center" action="#" th:action="@{/deletesong}" th:object="${song}" method="post">
+			<div class="flex flex-col">
+				<div class="uppercase text-sm text-xs font-bold ml-3">Singer</div>
+				<input type="text" class="rounded-lg py-1 px-3 mt-2" th:field="*{singer}" />
+			</div>
+			<p class="self-end">
+				<input type="submit" class="text-white bg-blue-500 hover:bg-blue-700  rounded-lg px-3 py-1" value="Submit" /> 
+				<input type="reset"  class="text-white bg-red-500 hover:bg-red-700  rounded-lg px-3 py-1" value="Reset" />
+			</p>
+		</form>
+		
+	</div>
+	<div class="flex justify-center pt-10">
+		<a href="viewsongs"class="mx-5 w-fit text-white bg-cyan-500 hover:bg-cyan-700  rounded-lg px-3 py-1" value="Submit" /> 
+			View songs
+		</a>
+		<a href="addsong"class=" mx-5 w-fit text-white bg-green-500 hover:bg-green-700  rounded-lg px-3 py-1" value="Submit" /> 
+			Add songs
+		</a>
+		<a href="editsong"class="mx-5 w-fit text-white bg-amber-500 hover:bg-amber-700  rounded-lg px-3 py-1" value="Submit" /> 
+			Edit songs
+		</a>
+		<a href="deletesong"class="mx-5 w-fit text-white bg-red-500 hover:bg-red-700  rounded-lg px-3 py-1" value="Submit" /> 
+			Delete songs
+		</a>
+	</div>
+</body>
+</html>
