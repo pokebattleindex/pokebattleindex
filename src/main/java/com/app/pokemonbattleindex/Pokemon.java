@@ -24,7 +24,7 @@ public class Pokemon {
 	private ArrayList<String> weaknesses;
 	private ArrayList<Pokemon> next_evolution;
 
-	//Create Getters and Setters
+	// Create Getters and Setters
 	public String getId() {
 		return id;
 	}

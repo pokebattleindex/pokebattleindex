@@ -6,25 +6,14 @@
 	</head>
 	<body>
 		<h1 class="text-6xl text-center font-bold pt-10">All Pokemon</h1>
-		<div class="md:px-36 pt-24 w-screen">
-			<!-- <table class="table-auto w-fit" border="1" cellpadding="10">
-				<thead class="text-xs font-semibold uppercase text-gray-400 bg-gray-50">
-					<tr >
-						<th class="p-5 whitespace-nowrap font-semibold text-left">Num</th>
-						<th class="p-5 whitespace-nowrap font-semibold text-left">Name</th>
-						<th class="p-5 whitespace-nowrap font-semibold text-left">Height</th>
-						<th class="p-5 whitespace-nowrap font-semibold text-left">Weight</th>
-					</tr>
-				</thead>
-				<tbody class="text-lg divide-y divide-gray-100">
-					<tr th:each="p : ${allpokemon}">
-						<td class="p-5 whitespace-nowrap font-medium text-left" th:text="${p.num}"></td>
-						<td class="p-5 whitespace-nowrap font-medium text-left" th:text="${p.name}"></td>
-						<td class="p-5 whitespace-nowrap font-medium text-left" th:text="${p.height}"></td>
-						<td class="p-5 whitespace-nowrap font-medium text-left" th:text="${p.weight}"></td>
-					</tr>
-				</tbody>
-			</table> -->
+		<div class="md:px-36 pt-24 w-screen ">
+			<div class="flex justify-center items-center">
+				<a href="/" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 ">Home</a>
+				<a href="/register" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 ">Register</a>
+				<a href="/login" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 ">Login</a>
+				<a href="/viewpokemon" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 ">ViewAll</a>
+				<a href="/fight" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 ">Fight</a>
+			</div>
 			<div class="grid justify-items-center md:grid-cols-2 lg:grid-cols-3 gap-12">
 				<div class="p-5 bg-white rounded-lg border border-gray-200 shadow-md w-full transform transition duration-100 hover:scale-110" th:each="p : ${allpokemon}">
 					<!-- Display id of the pokemon -->
