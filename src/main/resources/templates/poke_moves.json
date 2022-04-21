@@ -1,0 +1,36 @@
+[
+    {
+      "id": "25",
+      "name":"Pikachu",
+      "hp":"200",
+      "poke_move1_name":"Thunder Bolt",
+      "poke_move1_damage":"70",
+      "poke_move1_acc":"85", 
+      "poke_move2_name":"Iron Tail",
+      "poke_move2_damage":"40",
+      "poke_move2_acc":"100",  
+      "poke_move3_name":"Thunder",
+      "poke_move3_damage":"50",
+      "poke_move3_acc":"65",
+      "poke_move4_name":"quick attack",
+      "poke_move4_damage":"30",
+      "poke_move4_acc":"100"
+    },
+    {
+      "id":"4",
+      "name": "Charmander",
+      "hp": "200",
+        "poke_move1_name":"Ember",
+        "poke_move1_damage":"70",
+        "poke_move1_acc":"85",
+        "poke_move2_name":"Scratch",
+        "poke_move2_damage":"100",
+        "poke_move2_acc":"100",
+        "poke_move3_name":"Fire Spin",
+        "poke_move3_damage":"80",
+        "poke_move3_acc":"50",
+        "poke_move4_name":"Quick Attack",
+        "poke_move4_damage":"30",
+        "poke_move4_acc":"100"
+    }
+]
