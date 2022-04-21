@@ -1,7 +1,4 @@
 package com.app.pokemonbattleindex;
-
-import java.util.ArrayList;
-
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document("users")
