@@ -18,6 +18,7 @@ public class PokeMove{
     private String poke_move4_name;
     private int poke_move4_damage;
     private int poke_move4_acc;
+    private String img;
     
     public int getId() {
         return pid;
@@ -108,5 +109,12 @@ public class PokeMove{
     }
     public void setPoke_move4_acc(int poke_move4_acc) {
         this.poke_move4_acc = poke_move4_acc;
+    }
+
+    public String getImg() {
+        return img;
+    }
+    public void setImg(String img) {
+        this.img = img;
     }
 }
