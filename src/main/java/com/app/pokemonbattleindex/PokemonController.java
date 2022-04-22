@@ -1,5 +1,5 @@
 package com.app.pokemonbattleindex;
-
+import java.lang.Math;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,9 +62,9 @@ public class PokemonController {
 		System.out.println(pokemove.getName());
 		System.out.println(pokemove.getPoke_move1_name());
 		System.out.println(pokemove.getPoke_move1_damage());
-
-		//int dam =	Math.floor(pokemove.getPoke_move1_acc().getPoke_move1_damage());
-		int dam = pokemove.getPoke_move1_damage();
+ 
+		int dam = pokemove.getPoke_move1_damage() - (int)(Math.random() * pokemove.getPoke_move1_acc()) ;
+		System.out.println(dam);
 		List<PokeMove> pokemove1 = movesRepo.getPokeId("Charmander");
 		PokeMove p = pokemove1.get(0);
 
@@ -103,7 +103,7 @@ public class PokemonController {
 		System.out.println(pokemove.getPoke_move1_name());
 		System.out.println(pokemove.getPoke_move1_damage());
 
-		int dam = pokemove.getPoke_move1_damage();
+		int dam = pokemove.getPoke_move1_damage() - (int)(Math.random() * pokemove.getPoke_move1_acc()) ;
 
 		List<PokeMove> pokemove1 = movesRepo.getPokeId("Pikachu");
 		PokeMove p = pokemove1.get(0);
