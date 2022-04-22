@@ -6,18 +6,23 @@ public class PokeMove{
     private int pid;
     private String name;
     private int hp;
+    
     private String poke_move1_name;
     private int poke_move1_damage;
     private int poke_move1_acc;
+
     private String poke_move2_name;
     private int poke_move2_damage;
     private int poke_move2_acc;
+
     private String poke_move3_name;
     private int poke_move3_damage;
     private int poke_move3_acc;
+
     private String poke_move4_name;
     private int poke_move4_damage;
     private int poke_move4_acc;
+    
     private String img;
     
     public int getId() {
