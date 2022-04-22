@@ -50,17 +50,81 @@ public class PokemonController {
 
 	@GetMapping("/fight")
 	public String fightPokemon(Model model) {
-		List<PokeMove> pokemoves = movesRepo.findAll();
-		model.addAttribute("pokemoves", pokemoves);
-		return "fight";
+		List<PokeMove> pokemove1 = movesRepo.getPokeId("Pikachu");
+		model.addAttribute("p1", pokemove1.get(0));
+		List<PokeMove> pokemove2 = movesRepo.getPokeId("Charmander");
+		model.addAttribute("p2", pokemove2.get(0));
+		return "fight_poke1";
 	}
 
 	@PostMapping("/fight")
-	public String fight2(@ModelAttribute("pokemoves") List<PokeMove> pokemove) {
-		for(PokeMove move : pokemove) {
-			System.out.println(move.getPoke_move1_name());
+	public String fight2(@ModelAttribute("p1") PokeMove pokemove) {
+		System.out.println(pokemove.getName());
+		System.out.println(pokemove.getPoke_move1_name());
+		System.out.println(pokemove.getPoke_move1_damage());
+
+		//int dam =	Math.floor(pokemove.getPoke_move1_acc().getPoke_move1_damage());
+		int dam = pokemove.getPoke_move1_damage();
+		List<PokeMove> pokemove1 = movesRepo.getPokeId("Charmander");
+		PokeMove p = pokemove1.get(0);
+
+		System.out.println(p.getHp());
+		if((p.getHp() - dam)>0){
+			p.setHp(p.getHp() - dam);
 		}
-		return "redirect:/viewpokemon";
+		else {
+			p.setHp(200);
+			movesRepo.save(p);
+			List<PokeMove> pokemove2 = movesRepo.getPokeId("Pikachu");
+			PokeMove p2 = pokemove2.get(0);
+			p2.setHp(200);
+			movesRepo.save(p2);
+			return "victory2";
+		}
+		System.out.println(p.getHp());
+		movesRepo.save(p);
+
+		System.out.println(p.getPoke_move1_name());
+		return "redirect:/fight2";
+	}
+
+	@GetMapping("/fight2")
+	public String fightPokemon2(Model model) {
+		List<PokeMove> pokemove1 = movesRepo.getPokeId("Pikachu");
+		model.addAttribute("p1", pokemove1.get(0));
+		List<PokeMove> pokemove2 = movesRepo.getPokeId("Charmander");
+		model.addAttribute("p2", pokemove2.get(0));
+		return "fight_poke2";
+	}
+
+	@PostMapping("/fight2")
+	public String fight22(@ModelAttribute("pokemoves") PokeMove pokemove) {
+		System.out.println(pokemove.getName());
+		System.out.println(pokemove.getPoke_move1_name());
+		System.out.println(pokemove.getPoke_move1_damage());
+
+		int dam = pokemove.getPoke_move1_damage();
+
+		List<PokeMove> pokemove1 = movesRepo.getPokeId("Pikachu");
+		PokeMove p = pokemove1.get(0);
+
+		System.out.println(p.getHp());
+		if((p.getHp() - dam)>0){
+			p.setHp(p.getHp() - dam);
+		}
+		else {
+			p.setHp(200);
+			movesRepo.save(p);
+			List<PokeMove> pokemove2 = movesRepo.getPokeId("Charmander");
+			PokeMove p1 = pokemove2.get(0);
+			p1.setHp(200);
+			movesRepo.save(p1);
+			return "victory1";
+		}
+		System.out.println(p.getHp());
+		movesRepo.save(p);
+		System.out.println(p.getPoke_move1_name());
+		return "redirect:/fight";
 	}
 
 	@GetMapping("/")

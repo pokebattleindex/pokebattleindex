@@ -3,6 +3,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document("poke_moves")
 public class PokeMove{
+    private String _id;
     private int pid;
     private String name;
     private int hp;
@@ -24,6 +25,14 @@ public class PokeMove{
     private int poke_move4_acc;
     
     private String img;
+
+
+    public String get_id() {
+        return _id;
+    }
+    public void set_id(String _id) {
+        this._id = _id;
+    }
     
     public int getId() {
         return pid;
