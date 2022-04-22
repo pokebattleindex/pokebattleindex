@@ -5,9 +5,10 @@
 </head>
 <body class="px-36">
     <iframe width="0" height="0"
-    src="https://youtube.com/embed/RJKIrqO1Zas?&autoplay=1"frameborder="0" 
+    src="https://youtube.com/embed/RJKIrqO1Zas?&autoplay=1"
+    frameborder="0" 
     allow="autoplay">
-</iframe>
+    </iframe>
 
     <h1 class="text-6xl text-center font-extrabold p-5 py-10 text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 via-red-600 to-orange-400">Pokemon Battle Index</h1>
     <!-- <h1>Fight</h1> -->
@@ -27,7 +28,7 @@
                 <div class="grid grid-cols-2 gap-6 pt-10">
                     <!-- Pokemon Moves -->
                     <div class="cursor-pointer py-2 rounded-full border transform transition duration-100 hover:scale-110 hover:bg-red-100">
-                        <form class="flex justify-center items-center">
+                        <form class="flex justify-center items-center" action="#" th:action="@{/fight}" th:object="${pokemoves}" method="post">
                             <h5 class="text-xl text-center" th:text="${p.poke_move1_name}"></h5>
                         </form>
                         <form class="flex justify-center items-center">

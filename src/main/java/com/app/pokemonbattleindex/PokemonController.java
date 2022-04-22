@@ -56,15 +56,11 @@ public class PokemonController {
 	}
 
 	@PostMapping("/fight")
-	public String fight2(@ModelAttribute("user1pokemon") Pokemon user1pokemon, @ModelAttribute("user2pokemon") Pokemon user2pokemon) {
-		List<Pokemon> user1Pokemon = pokeRepo.getPokeId(user1pokemon.getId());
-		List<Pokemon> user2Pokemon = pokeRepo.getPokeId(user2pokemon.getId());
-		if(user1Pokemon.size() == 0 || user2Pokemon.size() == 0) {
-			return "redirect:/";
+	public String fight2(@ModelAttribute("pokemoves") List<PokeMove> pokemove) {
+		for(PokeMove move : pokemove) {
+			System.out.println(move.getPoke_move1_name());
 		}
-		else {
-			return "redirect:/fight";
-		}
+		return "redirect:/viewpokemon";
 	}
 
 	@GetMapping("/")
