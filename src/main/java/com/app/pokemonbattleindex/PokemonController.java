@@ -143,5 +143,12 @@ public class PokemonController {
 		return "viewpokemon";
 	}
 
+	@GetMapping("/settings")
+	public String viewSettings(Model model){
+		//List<User> u1 = movesRepo.getUserId(_id);
+		//model.addAttribute("user", u1.get(0));
+		return "settings";
+	}
+
 
 }
