@@ -59,16 +59,16 @@ public class PokemonController {
 
 	@PostMapping("/fight")
 	public String fight2(@ModelAttribute("p1") PokeMove pokemove) {
-		System.out.println(pokemove.getName());
+		/* System.out.println(pokemove.getName());
 		System.out.println(pokemove.getPoke_move1_name());
-		System.out.println(pokemove.getPoke_move1_damage());
+		System.out.println(pokemove.getPoke_move1_damage()); */
  
 		int dam = pokemove.getPoke_move1_damage() - (int)(Math.random() * pokemove.getPoke_move1_acc()) ;
 		System.out.println(dam);
 		List<PokeMove> pokemove1 = movesRepo.getPokeId("Charmander");
 		PokeMove p = pokemove1.get(0);
 
-		System.out.println(p.getHp());
+		/* System.out.println(p.getHp()); */
 		if((p.getHp() - dam)>0){
 			p.setHp(p.getHp() - dam);
 		}
@@ -81,10 +81,10 @@ public class PokemonController {
 			movesRepo.save(p2);
 			return "victory2";
 		}
-		System.out.println(p.getHp());
+		/* System.out.println(p.getHp()); */
 		movesRepo.save(p);
 
-		System.out.println(p.getPoke_move1_name());
+		/* System.out.println(p.getPoke_move1_name()); */
 		return "redirect:/fight2";
 	}
 
@@ -99,16 +99,16 @@ public class PokemonController {
 
 	@PostMapping("/fight2")
 	public String fight22(@ModelAttribute("pokemoves") PokeMove pokemove) {
-		System.out.println(pokemove.getName());
+		/* System.out.println(pokemove.getName());
 		System.out.println(pokemove.getPoke_move1_name());
-		System.out.println(pokemove.getPoke_move1_damage());
+		System.out.println(pokemove.getPoke_move1_damage()); */
 
 		int dam = pokemove.getPoke_move1_damage() - (int)(Math.random() * pokemove.getPoke_move1_acc()) ;
 
 		List<PokeMove> pokemove1 = movesRepo.getPokeId("Pikachu");
 		PokeMove p = pokemove1.get(0);
 
-		System.out.println(p.getHp());
+		/* System.out.println(p.getHp()); */
 		if((p.getHp() - dam)>0){
 			p.setHp(p.getHp() - dam);
 		}
@@ -121,9 +121,9 @@ public class PokemonController {
 			movesRepo.save(p1);
 			return "victory1";
 		}
-		System.out.println(p.getHp());
+		/* System.out.println(p.getHp()); */
 		movesRepo.save(p);
-		System.out.println(p.getPoke_move1_name());
+		/* System.out.println(p.getPoke_move1_name()); */
 		return "redirect:/fight";
 	}
 
