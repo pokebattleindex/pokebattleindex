@@ -2,8 +2,8 @@
 
 OOAD Mini Project made by
 
-Srinivasa Raghavan S - PES2UG19CS407
-Swati Maste - PES2UG19CS419
+Srinivasa Raghavan S - PES2UG19CS407 \
+Swati Maste - PES2UG19CS419 \
 Vihar Devalla - PES2UG19CS453
 
 # Dependencies
