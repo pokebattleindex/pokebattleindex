@@ -4,16 +4,28 @@
 		<script src="https://cdn.tailwindcss.com"></script>
 		<title>PokeBattleIndex - All Pokemon</title>
 	</head>
-	<body>
-		<h1 class="text-6xl text-center font-bold pt-10">All Pokemon</h1>
-		<div class="md:px-36 pt-24 w-screen ">
-			<div class="flex justify-center items-center">
-				<a href="/" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 ">Home</a>
-				<a href="/viewpokemon" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 ">ViewAll</a>
-				<a href="/fight" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 ">Fight</a>
-				<a href="/settings" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 ">Settings</a>
-				<a href="/signout" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 ">Signout</a>
+	<body class="bg-slate-800">
+		<nav class="fixed z-10 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 px-10 sm:px-4 py-2.5 w-screen">
+			<div class="container flex flex-wrap justify-between items-center mx-auto md:px-36">
+				<div class="flex items-center">
+					<a href="/" class="text-lg font-semibold text-gray-900">
+						<img src="https://seeklogo.com/images/P/Pokemon-logo-497D61B223-seeklogo.com.png" alt="Pokemon Go logo" class="w-24">
+					</a>
+					<h1 class="px-10 text-2xl font-extrabold text-transparent bg-clip-text ">PokeBattleIndex</h1>
+				</div>
+				<div class="flex  items-center">
+					<a href="/" class="py-2.5 px-5 mr-2  text-sm font-medium text-white focus:outline-none  rounded-lg   hover:text-blue-400 focus:z-10 focus:ring-4 focus:ring-gray-200 ">Home</a>
+					<a href="/viewpokemon" class="py-2.5 px-5 mr-2  text-sm font-medium text-white focus:outline-none  rounded-lg   hover:text-blue-400 focus:z-10 focus:ring-4 focus:ring-gray-200 ">ViewAll</a>
+					<a href="/fight" class="py-2.5 px-5 mr-2 text-sm font-medium text-white focus:outline-none  rounded-lg   hover:text-blue-400 focus:z-10 focus:ring-4 focus:ring-gray-200 ">Fight</a>
+					<a href="/leaderboard" class="py-2.5 px-5 mr-2 text-sm font-medium text-white focus:outline-none  rounded-lg   hover:text-blue-400 focus:z-10 focus:ring-4 focus:ring-gray-200 ">Leaderboard</a>
+					<a href="/settings" class="py-2.5 px-5 mr-2 text-sm font-medium text-white focus:outline-none  rounded-lg   hover:text-blue-400 focus:z-10 focus:ring-4 focus:ring-gray-200 ">Settings</a>
+					<a href="/signout" class="py-2.5 px-5 mr-2 text-sm font-medium text-white focus:outline-none  rounded-lg   hover:text-blue-400 focus:z-10 focus:ring-4 focus:ring-gray-200 ">Signout</a>
+				</div>
 			</div>
+		</nav>
+		<h1 class="text-white text-6xl text-center font-bold pt-24">All Pokemon</h1>
+		<div class="md:px-36 pt-24 w-screen ">
+			
 			<div class="grid justify-items-center md:grid-cols-2 lg:grid-cols-3 gap-12">
 				<div class="p-5 bg-white rounded-lg border border-gray-200 shadow-md w-full transform transition duration-100 hover:scale-110" th:each="p : ${allpokemon}">
 					<!-- Display id of the pokemon -->
