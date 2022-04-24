@@ -2,11 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<script src="https://cdn.tailwindcss.com"></script>
-		<title>PokeBattleIndex - All Pokemon</title>
+		<title >PokeBattleIndex - All Pokemon</title>
 	</head>
-	<body>
-		<h1 class="text-6xl text-center font-bold pt-10">All Pokemon</h1>
-		<div class="md:px-36 pt-10 w-screen ">
+	<body class="bg-slate-800">
+		<h1 class="text-6xl text-center font-extrabold  p-5 py-10 text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 via-red-600 to-orange-400">All Pokemon</h1>
+		<div class=" mb-10 md:px-36 pt-5 w-screen ">
 			<div class="flex justify-center items-center">
 				<a href="/" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 ">Home</a>
 				<a href="/viewpokemon" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 ">ViewAll</a>
@@ -21,7 +21,7 @@
 
 			</div> -->
 			<div class="grid justify-items-center gap-12 pt-10">
-				<div class="p-5 bg-white rounded-lg border border-gray-200 shadow-md w-full" th:object="${pokemon}">
+				<div class="p-5 bg-white rounded-xl border border-gray-200 shadow-md w-full" th:object="${pokemon}">
 					<!-- Display id of the pokemon -->
 					<div class="flex px-5 pt-2">
 						<h1 class="text-3xl font-bold text-gray-500"><span th:text="${pokemon.num}"></span></h1>
@@ -38,25 +38,25 @@
 							</a>
 							
 							<!-- Display Pokemon Height and Weight -->
-							<div class="grid md:grid-cols-2 bg-blue-500 rounded p-7">
-								<span class="text-center text-white text-3xl" >
+							<div class="grid md:grid-cols-2 bg-blue-500 rounded-xl p-10">
+								<span class="text-center text-white text-2xl" >
 									Height <p th:text="${pokemon.height}"></p> 
 								</span>
-								<span class="text-center  text-white text-3xl">
+								<span class="text-center  text-white text-2xl">
 									Weight <p th:text="${pokemon.weight}"></p>
 								</span>
 							</div>
 
-							<div class="">
+							<div class="p-5" font="bold">
 								<span>Type:  </span>
-								<div class="" >
+								<div class="flex justify-start" >
 									<div th:each="type:${pokemon.type}">
 										<span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2" th:text="${type}"></span>
 									</div>	
 								</div>
 							</div>
 
-							<div class="">
+							<div class="p-5" font="bold">
 								<span>Weakness:  </span>
 								<div class="flex " >
 									<div th:each="weaknesses:${pokemon.weaknesses}">

@@ -3,14 +3,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Pokemon Battle Index</title>
 </head>
-<body class="px-36">
+<body class="px-36 bg-slate-800">
     <iframe width="0" height="0"
     src="https://youtube.com/embed/RJKIrqO1Zas?&autoplay=1"
     frameborder="0" 
     allow="autoplay">
     </iframe>
 
-    <h1 class="text-6xl text-center font-extrabold p-5 py-10 text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 via-red-600 to-orange-400">Pokemon Battle Index</h1>
+    <h1 class="text-6xl text-center font-extrabold p-5 py-10 text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-orange-500 to-yellow-400">Pokemon Battle Index</h1>
     <!-- <h1>Fight</h1> -->
 
     <div class="grid md:grid-cols-2  gap-12">
@@ -28,7 +28,7 @@
                     HP
                     <h5 class="text-2xl text-center text-green-500" th:text="${p1.hp}"></h5>
                 </h1>
-                <div class="grid grid-cols-2 gap-6 pt-10">
+                <div class="grid grid-cols-2 gap-6 pt-10 mb-8 ">
                     <form action="#" th:action="@{/fight}" th:object="${p1}" method="post" class="cursor-pointer py-2  rounded-full border transform transition duration-100 hover:scale-110 hover:bg-green-100" >
                         <input type="hidden" name="name" th:value="${p1.name}">
                         <input type="hidden" name="poke_move1_name" th:value="${p1.poke_move1_name}">
@@ -40,7 +40,7 @@
                         </div>
                     </form>
 
-                    <form action="#" th:action="@{/fight}" th:object="${p1}" method="post" class="cursor-pointer py-2  rounded-full border transform transition duration-100 hover:scale-110 hover:bg-green-100" >
+                    <form action="#" th:action="@{/fight}" th:object="${p1}" method="post" class="cursor-pointer py-2  rounded-full border transform transition duration-100 hover:scale-110 hover:bg-green-100 " >
                         <input type="hidden" name="name" th:value="${p1.name}">
                         <input type="hidden" name="poke_move1_name" th:value="${p1.poke_move2_name}">
                         <input type="hidden" name="poke_move1_damage" th:value="${p1.poke_move2_damage}">
