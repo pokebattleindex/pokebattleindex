@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<h1 class="text-6xl text-center font-bold pt-10">All Pokemon</h1>
-		<div class="md:px-36 pt-24 w-screen ">
+		<div class="md:px-36 pt-10 w-screen ">
 			<div class="flex justify-center items-center">
 				<a href="/" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 ">Home</a>
 				<a href="/viewpokemon" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 ">ViewAll</a>
@@ -14,9 +14,62 @@
 				<a href="/settings" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 ">Settings</a>
 				<a href="/signout" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 ">Signout</a>
 			</div>
-			<div class="grid justify-items-center md:grid-cols-2 lg:grid-cols-3 gap-12">
+			<!-- <div class="grid justify-items-center gap-12">
+				<div class=""  >
+					<p th:text="${pokemon.name}"></p>
+				</div>
 
-			</div>
+			</div> -->
+			<div class="grid justify-items-center gap-12 pt-10">
+				<div class="p-5 bg-white rounded-lg border border-gray-200 shadow-md w-full" th:object="${pokemon}">
+					<!-- Display id of the pokemon -->
+					<div class="flex px-5 pt-2">
+						<h1 class="text-3xl font-bold text-gray-500"><span th:text="${pokemon.num}"></span></h1>
+					</div>
+
+					<div class="grid grid-cols-2">
+						<a href="#" class="flex items-center justify-center">
+							<img class="rounded-t-lg w-96" th:src="${pokemon.img}" alt="${pokemon.name}" />
+						</a>
+
+						<div class="pb-5">
+							<a href="#">
+								<h5 class="mb-2 text-5xl text-center font-bold tracking-tight text-gray-900" th:text="${pokemon.name}"></h5>
+							</a>
+							
+							<!-- Display Pokemon Height and Weight -->
+							<div class="grid md:grid-cols-2 bg-blue-500 rounded p-7">
+								<span class="text-center text-white text-3xl" >
+									Height <p th:text="${pokemon.height}"></p> 
+								</span>
+								<span class="text-center  text-white text-3xl">
+									Weight <p th:text="${pokemon.weight}"></p>
+								</span>
+							</div>
+
+							<div class="">
+								<span>Type:  </span>
+								<div class="" >
+									<div th:each="type:${pokemon.type}">
+										<span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2" th:text="${type}"></span>
+									</div>	
+								</div>
+							</div>
+
+							<div class="">
+								<span>Weakness:  </span>
+								<div class="flex " >
+									<div th:each="weaknesses:${pokemon.weaknesses}">
+										<span class="inline-block bg-red-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2" th:text="${weaknesses}"></span>
+									</div>		
+								</div>
+							</div>
+							
+	
+						</div>
+					</div>
+					
+					
 			
 			
 		</div>

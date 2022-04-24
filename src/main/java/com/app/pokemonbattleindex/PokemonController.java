@@ -19,6 +19,8 @@ public class PokemonController {
 	public UserRepo userRepo;
 	@Autowired
 	public MovesRepo movesRepo;
+	@Autowired
+	public LeaderRepo leaderRepo;
 
 	@GetMapping("/register")
 	public String register(Model model) {
@@ -72,7 +74,7 @@ public class PokemonController {
 		System.out.println(pokemove.getPoke_move1_name());
 		System.out.println(pokemove.getPoke_move1_damage()); */
  
-		int dam = pokemove.getPoke_move1_damage() - ((int)(Math.random() * pokemove.getPoke_move1_acc())) ;
+		int dam = pokemove.getPoke_move1_damage() - (int)(pokemove.getPoke_move1_damage()*((Math.random() * pokemove.getPoke_move1_acc()*0.01)) ) ;
 		System.out.println(dam);
 		List<PokeMove> pokemove1 = movesRepo.getPokeId("Charmander");
 		PokeMove p = pokemove1.get(0);
@@ -82,12 +84,27 @@ public class PokemonController {
 			p.setHp(p.getHp() - dam);
 		}
 		else {
-			p.setHp(200);
-			movesRepo.save(p);
+			
 			List<PokeMove> pokemove2 = movesRepo.getPokeId("Pikachu");
 			PokeMove p2 = pokemove2.get(0);
+
+			Leader l = new Leader();
+			l.setWinner("Pikachu");
+			l.setLoser("Charmander");
+			l.setWinner_hp(p2.getHp());
+			l.setLoser_hp(0);
+			l.setWinner_move(pokemove.getPoke_move1_name());
+			l.setLoser_move(p.getPoke_move1_name());
+			leaderRepo.save(l);
+
+			p.setHp(200);
 			p2.setHp(200);
+			movesRepo.save(p);
 			movesRepo.save(p2);
+
+			
+
+
 			return "victory2";
 		}
 		/* System.out.println(p.getHp()); */
@@ -111,8 +128,7 @@ public class PokemonController {
 		/* System.out.println(pokemove.getName());
 		System.out.println(pokemove.getPoke_move1_name());
 		System.out.println(pokemove.getPoke_move1_damage()); */
-
-		int dam = pokemove.getPoke_move1_damage() - ((int)(Math.random() * pokemove.getPoke_move1_acc())) ;
+		int dam = pokemove.getPoke_move1_damage() - (int)(pokemove.getPoke_move1_damage()*((Math.random() * pokemove.getPoke_move1_acc()*0.01)) ) ;
 
 		List<PokeMove> pokemove1 = movesRepo.getPokeId("Pikachu");
 		PokeMove p = pokemove1.get(0);
@@ -122,12 +138,26 @@ public class PokemonController {
 			p.setHp(p.getHp() - dam);
 		}
 		else {
-			p.setHp(200);
-			movesRepo.save(p);
+			
 			List<PokeMove> pokemove2 = movesRepo.getPokeId("Charmander");
 			PokeMove p1 = pokemove2.get(0);
+
+			Leader l = new Leader();
+			l.setWinner("Charmander");
+			l.setLoser("Pikachu");
+			l.setWinner_hp(p1.getHp());
+			l.setLoser_hp(0);
+			l.setWinner_move(pokemove.getPoke_move1_name());
+			l.setLoser_move(p.getPoke_move1_name());
+			leaderRepo.save(l);
+
+
 			p1.setHp(200);
+			p.setHp(200);
+			movesRepo.save(p);
 			movesRepo.save(p1);
+			
+			
 			return "victory1";
 		}
 		/* System.out.println(p.getHp()); */
@@ -199,6 +229,19 @@ public class PokemonController {
 		userRepo.save(u);
 
 		return "redirect:/login";
+	}
+
+	@GetMapping("/leaderboard")
+	public String viewLeaderboard(Model model){
+		List<User> u1 = userRepo.getUserbyLogin("true");
+		if(u1.size() == 0) {
+			return "redirect:/login";
+		}
+		else {
+			List<Leader> leaders = leaderRepo.findAll();
+			model.addAttribute("leaders", leaders);
+			return "leaderboard";
+		}
 	}
 
 	@GetMapping("/signout")

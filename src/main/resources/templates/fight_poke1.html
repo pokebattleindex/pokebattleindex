@@ -42,7 +42,7 @@
 
                     <form action="#" th:action="@{/fight}" th:object="${p1}" method="post" class="cursor-pointer py-2  rounded-full border transform transition duration-100 hover:scale-110 hover:bg-green-100" >
                         <input type="hidden" name="name" th:value="${p1.name}">
-                        <input type="hidden" name="poke_move2_name" th:value="${p1.poke_move2_name}">
+                        <input type="hidden" name="poke_move1_name" th:value="${p1.poke_move2_name}">
                         <input type="hidden" name="poke_move1_damage" th:value="${p1.poke_move2_damage}">
                         <input type="hidden" name="poke_move1_acc" th:value="${p1.poke_move2_acc}">
                         <input type="submit" th:value="${p1.poke_move2_name}" class="text-xl text-center w-full">
@@ -52,7 +52,7 @@
                     </form>
                     <form action="#" th:action="@{/fight}" th:object="${p1}" method="post" class="cursor-pointer py-2  rounded-full border transform transition duration-100 hover:scale-110 hover:bg-green-100" >
                         <input type="hidden" name="name" th:value="${p1.name}">
-                        <input type="hidden" name="poke_move3_name" th:value="${p1.poke_move3_name}">
+                        <input type="hidden" name="poke_move1_name" th:value="${p1.poke_move3_name}">
                         <input type="hidden" name="poke_move1_damage" th:value="${p1.poke_move3_damage}">
                         <input type="hidden" name="poke_move1_acc" th:value="${p1.poke_move3_acc}">
                         <input type="submit" th:value="${p1.poke_move3_name}" class="text-xl text-center w-full">
@@ -62,7 +62,7 @@
                     </form>
                     <form action="#" th:action="@{/fight}" th:object="${p1}" method="post" class="cursor-pointer py-2  rounded-full border transform transition duration-100 hover:scale-110 hover:bg-green-100" >
                         <input type="hidden" name="name" th:value="${p1.name}">
-                        <input type="hidden" name="poke_move4_name" th:value="${p1.poke_move4_name}">
+                        <input type="hidden" name="poke_move1_name" th:value="${p1.poke_move4_name}">
                         <input type="hidden" name="poke_move1_damage" th:value="${p1.poke_move4_damage}">
                         <input type="hidden" name="poke_move1_acc" th:value="${p1.poke_move4_acc}">
                         <input type="submit" th:value="${p1.poke_move4_name}" class="text-xl text-center w-full">
