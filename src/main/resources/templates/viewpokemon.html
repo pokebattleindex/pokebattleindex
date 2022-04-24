@@ -5,7 +5,7 @@
 		<title>PokeBattleIndex - All Pokemon</title>
 	</head>
 	<body class="bg-slate-800">
-		<nav class="fixed z-10 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 px-10 sm:px-4 py-2.5 w-screen">
+		<nav class="fixed z-10 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 px-10 sm:px-4 py-2.5 w-full">
 			<div class="container flex flex-wrap justify-between items-center mx-auto md:px-36">
 				<div class="flex items-center">
 					<a href="/" class="text-lg font-semibold text-gray-900">
@@ -24,13 +24,13 @@
 			</div>
 		</nav>
 		<h1 class="text-white text-6xl text-center font-bold pt-24">All Pokemon</h1>
-		<div class="md:px-36 pt-24 w-screen ">
+		<div class="md:px-28 pt-24 w-screen ">
 			
 			<div class="grid justify-items-center md:grid-cols-2 lg:grid-cols-3 gap-12">
-				<div class="p-5 bg-white rounded-lg border border-gray-200 shadow-md w-full transform transition duration-100 hover:scale-110" th:each="p : ${allpokemon}">
+				<div class="p-5 bg-gray-400 rounded-lg border border-gray-200 shadow-md w-full transform transition duration-100 hover:scale-110" th:each="p : ${allpokemon}">
 					<!-- Display id of the pokemon -->
 					<div class="flex px-5 pt-2">
-						<h1 class="text-3xl font-bold text-gray-500"><span th:text="${p.num}"></span></h1>
+						<h1 class="text-3xl font-bold text-gray-700"><span th:text="${p.num}"></span></h1>
 					</div>
 					<a href="#" class="flex items-center justify-center">
 						<img class="rounded-t-lg w-56" th:src="${p.img}" alt="${p.name}" />

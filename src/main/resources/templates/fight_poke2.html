@@ -3,7 +3,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Pokemon Battle Index</title>
 </head>
-<body class="px-36">
+<body class="px-36  bg-slate-800">
     <iframe width="0" height="0"
     src="https://youtube.com/embed/RJKIrqO1Zas?&autoplay=1"
     frameborder="0" 
@@ -14,19 +14,20 @@
     <!-- <h1>Fight</h1> -->
 
     <div class="grid md:grid-cols-2  gap-12">
-        <form class="p-5 bg-white rounded-lg border border-gray-200 shadow-md w-full" th:object="${p1}">
+        <form class="p-5 mb-5 bg-gradient-to-tr from-orange-400 to-rose-400  rounded-lg border border-gray-200 shadow-md w-full" th:object="${p1}">
             <!-- Display id of the pokemon -->
             <div class="pb-5" >
                 <h5 class="mb-2 text-2xl text-center font-bold tracking-tight text-gray-900" th:text="${p1.name}"></h5>
+                <h5 class="mb-2 text-2xl text-center font-bold tracking-tight text-amber-100">Waiting...</h5>
                 <a href="#" class="flex items-center justify-center">
                     <img class="rounded-t-lg w-56" th:src="${p1.img}" alt="${p1.name}" />
                 </a>
                 <h1 class="flex justify-center items-center">
                     HP
-                    <h5 class="text-2xl text-center text-green-500" th:text="${p1.hp}"></h5>
+                    <h5 class="text-4xl font-extrabold text-center text-green-300" th:text="${p1.hp}"></h5>
                 </h1>
                 <div class="grid grid-cols-2 gap-6 pt-10">
-                    <div class="cursor-pointer py-2  rounded-full border transform transition duration-100 hover:scale-110 hover:bg-red-100" >
+                    <div class="cursor-pointer py-2  rounded-full border transform transition duration-100 bg-red-100/[.10] hover:scale-110 hover:bg-red-100" >
                         <form class="flex justify-center items-center">
                             <h5 class="text-xl text-center" th:text="${p1.poke_move1_name}"></h5>
                         </form>
@@ -34,7 +35,7 @@
                             <h5 class="text-xl text-center" th:text="${p1.poke_move1_damage}"></h5>
                         </form>
                     </div>
-                    <div class="cursor-pointer py-2  rounded-full border transform transition duration-100 hover:scale-110 hover:bg-red-100" >
+                    <div class="cursor-pointer py-2  rounded-full border transform transition duration-100 bg-red-100/[.10] hover:scale-110 hover:bg-red-100" >
                         <form class="flex justify-center items-center">
                             <h5 class="text-xl text-center" th:text="${p1.poke_move2_name}"></h5>
                         </form>
@@ -42,7 +43,7 @@
                             <h5 class="text-xl text-center" th:text="${p1.poke_move2_damage}"></h5>
                         </form>
                     </div>
-                    <div class="cursor-pointer py-2  rounded-full border transform transition duration-100 hover:scale-110 hover:bg-red-100">
+                    <div class="cursor-pointer py-2  rounded-full border transform transition duration-100 bg-red-100/[.10] hover:scale-110 hover:bg-red-100">
                         <form class="flex justify-center items-center">
                             <h5 class="text-xl text-center" th:text="${p1.poke_move3_name}"></h5>
                         </form>
@@ -50,7 +51,7 @@
                             <h5 class="text-xl text-center" th:text="${p1.poke_move3_damage}"></h5>
                         </form>
                     </div>
-                    <div class="cursor-pointer py-2  rounded-full border transform transition duration-100 hover:scale-110 hover:bg-red-100">
+                    <div class="cursor-pointer py-2  rounded-full border transform transition duration-100 bg-red-100/[.10] hover:scale-110 hover:bg-red-100">
                         <form class="flex justify-center items-center ">
                             <h5 class="text-xl text-center" th:text="${p1.poke_move4_name}"></h5>
                         </form>
@@ -61,18 +62,19 @@
                 </div>
             </div>
         </form>
-        <div class="p-5 bg-white rounded-lg border border-gray-200 shadow-md w-full">
+        <div class="p-5 mb-5 bg-gradient-to-br from-green-300 via-blue-500 to-purple-600 rounded-lg border border-gray-200 shadow-md w-full">
             <div class="pb-5" th:object="${p2}">
                 <h5 class="mb-2 text-2xl text-center font-bold tracking-tight text-gray-900" th:text="${p2.name}"></h5>
+                <h5 class="mb-2 text-2xl text-center font-bold tracking-tight text-fuchsia-100 "> Your Turn</h5>
                 <a href="#" class="flex items-center justify-center">
                     <img class="rounded-t-lg w-56" th:src="${p2.img}" alt="${p2.name}" />
                 </a>
                 <h1 class="flex justify-center items-center">
                     HP
-                    <h5 class="text-2xl text-center text-green-500" th:text="${p2.hp}"></h5>
+                    <h5 class="text-4xl font-extrabold text-center text-green-300" th:text="${p2.hp}"></h5>
                 </h1>
                 <div class="grid grid-cols-2 gap-6 pt-10">
-                    <form action="#" th:action="@{/fight2}" th:object="${p2}" method="post" class="cursor-pointer py-2  rounded-full border transform transition duration-100 hover:scale-110 hover:bg-green-100" >
+                    <form action="#" th:action="@{/fight2}" th:object="${p2}" method="post" class="cursor-pointer py-2  rounded-full border transform transition duration-100 bg-green-100/[.50] hover:scale-110 hover:bg-green-100" >
                         <input type="hidden" name="name" th:value="${p2.name}">
                         <input type="hidden" name="poke_move1_name" th:value="${p2.poke_move1_name}">
                         <input type="hidden" name="poke_move1_damage" th:value="${p2.poke_move1_damage}">
@@ -82,7 +84,7 @@
                             <h5 class="text-xl text-center" th:text="${p2.poke_move1_damage}"></h5>
                         </div>
                     </form>
-                    <form action="#" th:action="@{/fight2}" th:object="${p2}" method="post" class="cursor-pointer py-2  rounded-full border transform transition duration-100 hover:scale-110 hover:bg-green-100" >
+                    <form action="#" th:action="@{/fight2}" th:object="${p2}" method="post" class="cursor-pointer py-2  rounded-full border transform transition duration-100 bg-green-100/[.50] hover:scale-110 hover:bg-green-100" >
                         <input type="hidden" name="name" th:value="${p2.name}">
                         <input type="hidden" name="poke_move1_name" th:value="${p2.poke_move2_name}">
                         <input type="hidden" name="poke_move1_damage" th:value="${p2.poke_move2_damage}">
@@ -92,7 +94,7 @@
                             <h5 class="text-xl text-center" th:text="${p2.poke_move2_damage}"></h5>
                         </div>
                     </form>
-                    <form action="#" th:action="@{/fight2}" th:object="${p2}" method="post" class="cursor-pointer py-2  rounded-full border transform transition duration-100 hover:scale-110 hover:bg-green-100" >
+                    <form action="#" th:action="@{/fight2}" th:object="${p2}" method="post" class="cursor-pointer py-2  rounded-full border transform transition duration-100 bg-green-100/[.50] hover:scale-110 hover:bg-green-100" >
                         <input type="hidden" name="name" th:value="${p2.name}">
                         <input type="hidden" name="poke_move1_name" th:value="${p2.poke_move3_name}">
                         <input type="hidden" name="poke_move1_damage" th:value="${p2.poke_move3_damage}">
@@ -102,7 +104,7 @@
                             <h5 class="text-xl text-center" th:text="${p2.poke_move3_damage}"></h5>
                         </div>
                     </form>
-                    <form action="#" th:action="@{/fight2}" th:object="${p2}" method="post" class="cursor-pointer py-2  rounded-full border transform transition duration-100 hover:scale-110 hover:bg-green-100" >
+                    <form action="#" th:action="@{/fight2}" th:object="${p2}" method="post" class="cursor-pointer py-2  rounded-full border transform transition duration-100 bg-green-100/[.50] hover:scale-110 hover:bg-green-100" >
                         <input type="hidden" name="name" th:value="${p2.name}">
                         <input type="hidden" name="poke_move1_name" th:value="${p2.poke_move4_name}">
                         <input type="hidden" name="poke_move1_damage" th:value="${p2.poke_move4_damage}">
