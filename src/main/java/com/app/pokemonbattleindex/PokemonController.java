@@ -196,13 +196,13 @@ public class PokemonController {
 	}
 
 	@GetMapping("/pokemon")
-	public String displayPokemon(Model model) {
+	public String displayPokemon(@RequestParam("name") String name, Model model) {
 		List<User> u1 = userRepo.getUserbyLogin("true");
 		if(u1.size() == 0) {
 			return "redirect:/login";
 		}
 		else {
-			List<Pokemon> pokemons = pokeRepo.getPokebyName("Pikachu");
+			List<Pokemon> pokemons = pokeRepo.getPokebyName(name);
 			model.addAttribute("pokemon",pokemons.get(0));
 			System.out.println(pokemons.get(0).getName());
 			return "pokemon";

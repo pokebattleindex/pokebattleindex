@@ -3,19 +3,37 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Pokemon Battle Index</title>
 </head>
-<body class="px-36">
-    <h1 class="text-6xl text-center font-extrabold p-5 py-10 text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 via-red-600 to-orange-400">Pokemon Battle Index</h1>
-    <div class="flex justify-center items-center">
-        <a href="/" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 ">Home</a>
-        <a href="/viewpokemon" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 ">ViewAll</a>
-        <a href="/fight" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 ">Fight</a>
-        <a href="/settings" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 ">Settings</a>
-        <a href="/signout" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 ">Signout</a>
-    </div>
-    <div class="justify-center" th:object="${user}">
-        <h5 class="text-xl text-center">Helo frnds chai pelo </span></h5>
-        <div class="flex justify-center items-center text-4xl">
-            <h5> Welcome <span th:text="${user.trainername}"> </span></h5>
+<body style=" background-image: url('https://images.wallpapersden.com/image/download/pokemon-pikachu-art_a25tbW6UmZqaraWkpJRmbmdlrWZlbWU.jpg');">
+    
+    <video autoplay loop class="absolute z-10 w-screen" >
+        <source src="https://v.redd.it/v62q4vhrcpy01/DASH_9_6_M" type="video/mp4">
+    </video>
+    <div class="z-10 fixed ">
+    <nav class="bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 px-10 sm:px-4 py-2.5 w-screen">
+        <div class="container flex flex-wrap justify-between items-center mx-auto md:px-36">
+            <div class="flex items-center">
+                <a href="/" class="text-lg font-semibold text-gray-900">
+                    <img src="https://seeklogo.com/images/P/Pokemon-logo-497D61B223-seeklogo.com.png" alt="Pokemon Go logo" class="w-24">
+                </a>
+                <h1 class="px-10 text-2xl font-extrabold text-transparent bg-clip-text ">PokeBattleIndex</h1>
+            </div>
+            <div class="flex  items-center">
+                <a href="/" class="py-2.5 px-5 mr-2  text-sm font-medium text-white focus:outline-none  rounded-lg   hover:text-blue-400 focus:z-10 focus:ring-4 focus:ring-gray-200 ">Home</a>
+                <a href="/viewpokemon" class="py-2.5 px-5 mr-2  text-sm font-medium text-white focus:outline-none  rounded-lg   hover:text-blue-400 focus:z-10 focus:ring-4 focus:ring-gray-200 ">ViewAll</a>
+                <a href="/fight" class="py-2.5 px-5 mr-2 text-sm font-medium text-white focus:outline-none  rounded-lg   hover:text-blue-400 focus:z-10 focus:ring-4 focus:ring-gray-200 ">Fight</a>
+                <a href="/leaderboard" class="py-2.5 px-5 mr-2 text-sm font-medium text-white focus:outline-none  rounded-lg   hover:text-blue-400 focus:z-10 focus:ring-4 focus:ring-gray-200 ">Leaderboard</a>
+                <a href="/settings" class="py-2.5 px-5 mr-2 text-sm font-medium text-white focus:outline-none  rounded-lg   hover:text-blue-400 focus:z-10 focus:ring-4 focus:ring-gray-200 ">Settings</a>
+                <a href="/signout" class="py-2.5 px-5 mr-2 text-sm font-medium text-white focus:outline-none  rounded-lg   hover:text-blue-400 focus:z-10 focus:ring-4 focus:ring-gray-200 ">Signout</a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="justify-center px-36 py-20" th:object="${user}">
+        <!-- <h5 class="text-xl text-center pt-10">Hello! </span></h5> -->
+        <div class="flex items-center text-4xl text-white">
+            <h5 class="font-bold text-6xl"> Welcome <span class="font-extrabold text-transparent bg-clip-text bg-amber-500" th:text="${user.trainername}"> </span></h5>
         </div>
     </div>
+    </div>
+    
 </body>

@@ -24,7 +24,7 @@
 						<img class="rounded-t-lg w-56" th:src="${p.img}" alt="${p.name}" />
 					</a>
 					<div class="pb-5">
-						<a href="#">
+						<a th:href="${'/pokemon?name='+ p.name}">
 							<h5 class="mb-2 text-2xl text-center font-bold tracking-tight text-gray-900" th:text="${p.name}"></h5>
 						</a>
 						<!-- Display Pokemon Type in array -->
