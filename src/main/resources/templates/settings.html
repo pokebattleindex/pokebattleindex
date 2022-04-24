@@ -1,29 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="https://static.shoutem.com/libs/web-ui/0.1.17/web-ui.css">
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Pokemon Battle Index</title>
 </head>
-<body>
+<body class="px-36">
+    <h1 class="text-6xl text-center font-extrabold p-5 py-10 text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 via-red-600 to-orange-400">Pokemon Battle Index</h1>
+    <div class="flex justify-center items-center">
+        <!-- <a href="/" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 ">Home</a> -->
+        <a href="/viewpokemon" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 ">ViewAll</a>
+		<a href="/fight" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 ">Fight</a>
+		<a href="/signout" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 ">Signout</a>
+        <!-- <a href="/viewpokemon" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 ">ViewAll</a>
+        <a href="/fight" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 ">Fight</a> -->
+    </div>
+    <div class="flex justify-center items-center py-10 ">
+        <form action="#" th:action="@{/settings}" th:object="${user}" method="post" class="w-96 border p-10 rounded">
+            <div class="mb-6">
+                <label class="block mb-2 text-sm font-medium text-gray-900 ">Your email</label>
+                <input type="email" th:field="*{username}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="g_sec@pes.com" required>
+            </div>
+            <div class="mb-6">
+                <label class="block mb-2 text-sm font-medium text-gray-900 ">Your Trainer Name</label>
+                <input type="text" th:field="*{trainername}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Ash Ketchum" required>
+            </div>
+            <div class="mb-6">
+                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 ">Your password</label>
+                <input type="password" th:field="*{password}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
+            </div>
+            
+            <input type="submit" value="Submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"></input>
+        </form>
+    </div>
 
-  <form id="hello-form" action="#">
-    <h3>Enter company name</h3>
-    <div class="form-group">
-      <label class="control-label" for="companyName">Company:</label>
-      <input id="companyName" name="companyName" type="text" class="form-control required">
-    </div>
-    <div class="footer">
-      <button class="btn btn-primary" type="submit">Save</button>
-    </div>
-  </form>
 
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-<script src="https://static.shoutem.com/libs/web-ui/0.1.17/bootstrap.min.js"></script>
-<script src="https://static.shoutem.com/libs/iframe-resizer/3.5.8/iframeResizer.contentWindow.min.js"></script>
-<script src="https://static.shoutem.com/libs/api-sdk/1.1.2/api-sdk.min.js"></script>
-<script src="https://static.shoutem.com/libs/extension-sandbox/0.1.4/extension-sandbox.min.js"></script>
-<script src="index.js"></script>
-</html>

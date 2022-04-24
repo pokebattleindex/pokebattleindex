@@ -11,4 +11,7 @@ public interface UserRepo extends MongoRepository <User,String>{
 	@Query("{username : ?0}")                                       
         List<User> getUser(String user);
 	
+	@Query("{loggedIn : ?0}")                                       
+        List<User> getUserbyLogin(String loggedIn);
+	
 }

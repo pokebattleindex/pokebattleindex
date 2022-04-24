@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 @Controller
@@ -26,7 +27,8 @@ public class PokemonController {
 	}
 
 	@PostMapping("/register")
-	public String register2(@ModelAttribute("loggeduser") User user) {
+	public String register2(@ModelAttribute("user") User user) {
+		user.setLoggedIn("false");
 		userRepo.save(user);
 		return "redirect:/";
 	}
@@ -38,13 +40,20 @@ public class PokemonController {
 	}
 
 	@PostMapping("/login")
-	public String login2(@ModelAttribute("user") User user) {
+	public String login2(@ModelAttribute("loginuser") User user) {
 		List<User> loginUser =  userRepo.getUser(user.getUsername());
 		if(loginUser.size() == 0) {
-			return "redirect:/";
+			return "redirect:/register";
 		}
 		else {
-			return "redirect:/viewpokemon";
+			if(loginUser.get(0).getPassword().equals(user.getPassword())) {
+				loginUser.get(0).setLoggedIn("true");
+				userRepo.save(loginUser.get(0));
+				return "redirect:/";
+			}
+			else {
+				return "redirect:/login";
+			}
 		}
 	}
 
@@ -129,26 +138,75 @@ public class PokemonController {
 
 	@GetMapping("/")
 	public String index(Model model){
-		// Add Login Functionality
-		model.addAttribute("user", new User());
-		return "index";
+		List<User> u1 = userRepo.getUserbyLogin("true");
+		if(u1.size() == 0) {
+			return "redirect:/login";
+		}
+		else {
+			model.addAttribute("user", u1.get(0));
+			return "index";
+		}
+		
 	}
 
 	
 
 	@GetMapping("/viewpokemon")
 	public String viewPokemon(Model model) {
-		List<Pokemon> pokemons = pokeRepo.findAll();
-		model.addAttribute("allpokemon",pokemons);
-		return "viewpokemon";
+		List<User> u1 = userRepo.getUserbyLogin("true");
+		if(u1.size() == 0) {
+			return "redirect:/login";
+		}
+		else {
+			List<Pokemon> pokemons = pokeRepo.findAll();
+			model.addAttribute("allpokemon",pokemons);
+			return "viewpokemon";
+		}
+		
+	}
+
+	@GetMapping("/pokemon")
+	public String displayPokemon(Model model) {
+		List<User> u1 = userRepo.getUserbyLogin("true");
+		if(u1.size() == 0) {
+			return "redirect:/login";
+		}
+		else {
+			List<Pokemon> pokemons = pokeRepo.getPokebyName("Pikachu");
+			model.addAttribute("pokemon",pokemons.get(0));
+			System.out.println(pokemons.get(0).getName());
+			return "pokemon";
+		}
 	}
 
 	@GetMapping("/settings")
 	public String viewSettings(Model model){
-		//List<User> u1 = movesRepo.getUserId(_id);
-		//model.addAttribute("user", u1.get(0));
+		List<User> u1 = userRepo.getUserbyLogin("true");
+		model.addAttribute("user", u1.get(0));
 		return "settings";
 	}
 
 
+	@PostMapping("/settings")
+	public String settings(@ModelAttribute("user") User user) {	
+		List<User> u1 = userRepo.getUserbyLogin("true");
+		User u = u1.get(0);
+		System.out.println(user.getTrainername());
+		u.setUsername(user.getUsername());
+		u.setTrainername(user.getTrainername());
+		u.setPassword(user.getPassword());
+		u.setLoggedIn("false");
+		userRepo.save(u);
+
+		return "redirect:/login";
+	}
+
+	@GetMapping("/signout")
+	public String signout(){
+		List<User> u1 = userRepo.getUserbyLogin("true");
+		User u = u1.get(0);
+		u.setLoggedIn("false");
+		userRepo.save(u);
+		return "redirect:/";
+	}
 }

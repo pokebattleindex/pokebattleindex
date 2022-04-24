@@ -10,5 +10,8 @@ public interface PokeRepo extends MongoRepository <Pokemon,String>{
 
 	@Query("{id : ?0}")                                       
         List<Pokemon> getPokeId(String user);
+
+	@Query("{name : ?0}")                                       
+        List<Pokemon> getPokebyName(String user);
 	
 }
