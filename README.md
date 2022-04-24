@@ -1,35 +1,31 @@
-# Spring-MVC-project
-OOAD project showcasing MVC architecture using Spring Boot and MongoDB
+# PokebattleIndex
+
+OOAD Mini Project made by
+
+Srinivasa Raghavan S - PES2UG19CS407
+Swati Maste - PES2UG19CS419
+Vihar Devalla - PES2UG19CS453
 
 # Dependencies
+* `MongoDB`
 * `Maven` 
 * `Spring Boot`
 * `Spring Web`
 * `Spring Data Mongodb`
 * `Thymeleaf`
+* `TailwindCSS`
 
 # Details of the Project
-All the source codes are under the src folder
-### Book.java
-* The "Model" of the architecture
-* contains name, description, author, year of release and rating along with getter and setter functions.
-### BookController.java
-* The "Controller" of the architecture
-* Handles Get requests to /homepage, /viewbooks and /addbook, Post request on form submission and interactions with the mongodb database
-### HTML templates
-* The "View" of the architecture
-* Utilizes thymeleaf engine to handle the model data received from the controller
-* Homepage provides links to the ViewBooks and AddBook urls
-* ViewBooks show all the models stored in the database
-* AddBook provides a form to submit a new entry into the database
+Our project consists of three major functionalities,
+1. Register/Login to maintain the player data
+2. Pokedex -> Tool to display Pokémon information, like name ,type, weight etc.
+3. Custom Poke-Battle between Pikachu and Charmander.
 
-### MongoRepo.java
-* contains an interface extending Spring's MongoRepository
+Minor functionalities include:
+1. Leader Board -> keeps track of the battles
+2. Settings page ->  allows user to the change username/password
+ 
+We used 3 Repos to connect to 3 different collections in the database, namely `UserRepo`,`MoveRepo`,`PokeRepo`.
+Similarly 3 different `Model` files have been made to store the database data in `Object` form, namely `Pokemon.java`,`User.java` and `PokeMove.java`.
 
-# Running the Project
-* Since the project runs using maven, open a terminal at the project's location and enter the following command:
-
-      mvnw spring-boot:run
-* `localhost:8080/` shows the Homepage
-* `localhost:8080/viewbooks` shows the table containing all the data
-* `localhost:8080/addbook` shows a form asking for the required details 
+Thymeleaf has been used for HTML templating (th:) and TailwindCSS for Styling  
