@@ -27,6 +27,9 @@ public class PokeMove{
     private int poke_move4_acc;
     
     private String img;
+    private String move_vid;
+    private String move_vid_h;
+    private String move_vid_w;
 
 
     public String get_id() {
@@ -139,6 +142,27 @@ public class PokeMove{
     }
     public void setPoke_vs_name(String poke_vs_name) {
         this.poke_vs_name = poke_vs_name;
+    }
+
+    public String getMove_vid() {
+        return move_vid;
+    }
+    public void setMove_vid(String move_vid) {
+        this.move_vid = move_vid;
+    }
+
+    public String getMove_vid_h() {
+        return move_vid_h;
+    }
+    public void setMove_vid_h(String move_vid_h) {
+        this.move_vid_h = move_vid_h;
+    }
+
+    public String getMove_vid_w() {
+        return move_vid_w;
+    }
+    public void setMove_vid_w(String move_vid_w) {
+        this.move_vid_w = move_vid_w;
     }
     
 }

@@ -71,19 +71,37 @@ public class PokemonController {
 	public String choose2(@ModelAttribute("poke") PokeMove poke) {
 		String poke_name = poke.getName();
 		String poke_vs_name = poke.getPoke_vs_name();
-		String redirectUrl = "redirect:/fight?poke1="+poke_name+"&poke2="+poke_vs_name;
+		String redirectUrl = "redirect:/fight?poke1="+poke_name+"&poke2="+poke_vs_name+"&move=1";
 		return redirectUrl;
 	}
 
 
 	@GetMapping("/fight")
-	public String fightPokemon(@RequestParam("poke1") String p1,@RequestParam("poke2") String p2, Model model) {
+	public String fightPokemon(@RequestParam("poke1") String p1,@RequestParam("poke2") String p2,@RequestParam("move") String move, Model model) {
 		//p1 = Pikachu
 		//p2 = Charmander
+		String video_link="";
+		System.out.println(move);
+		video_link = linkyRepo.getMove(move).get(0).getLink();
+		String video_link_h = linkyRepo.getMove(move).get(0).getHeight();
+		String video_link_w = linkyRepo.getMove(move).get(0).getWidth();
+		
+		
 		List<PokeMove> pokemove1 = movesRepo.getPokeId(p1);
-		model.addAttribute("p1", pokemove1.get(0));
 		List<PokeMove> pokemove2 = movesRepo.getPokeId(p2);
-		model.addAttribute("p2", pokemove2.get(0));
+
+		PokeMove poke1 = pokemove1.get(0);
+		PokeMove poke2 = pokemove2.get(0);
+		
+		System.out.println(video_link);
+		poke1.setMove_vid(video_link);
+		poke2.setMove_vid("");
+
+		poke1.setMove_vid_w(video_link_w);
+		poke1.setMove_vid_h(video_link_h);
+
+		model.addAttribute("p1", poke1);
+		model.addAttribute("p2", poke2);
 		return "fight_poke1";
 	}
 
@@ -91,7 +109,7 @@ public class PokemonController {
 	public String fight2(@ModelAttribute("p1") PokeMove pokemove) {
 		String poke_name = pokemove.getName();
 		String poke_vs_name = pokemove.getPoke_vs_name();
- 
+		String poke_move_name = pokemove.getPoke_move1_name();
 		int dam = (int)(pokemove.getPoke_move1_damage()*((Math.random() * pokemove.getPoke_move1_acc()*0.01)) ) ;
 		System.out.println(dam);
 		List<PokeMove> pokemove1 = movesRepo.getPokeId(poke_vs_name);
@@ -124,16 +142,31 @@ public class PokemonController {
 		movesRepo.save(p);
 
 		/* System.out.println(p.getPoke_move1_name()); */
-		String redirectUrl = "redirect:/fight2?poke1="+poke_name+"&poke2="+poke_vs_name;
+		String redirectUrl = "redirect:/fight2?poke1="+poke_name+"&poke2="+poke_vs_name+"&move="+poke_move_name;
 		return redirectUrl;
 	}
 
 	@GetMapping("/fight2")
-	public String fightPokemon2(@RequestParam("poke1") String p1,@RequestParam("poke2") String p2,Model model) {
+	public String fightPokemon2(@RequestParam("poke1") String p1,@RequestParam("poke2") String p2,@RequestParam("move") String move,Model model) {
+		String video_link;
+		video_link = linkyRepo.getMove(move).get(0).getLink();
+		String video_link_h = linkyRepo.getMove(move).get(0).getHeight();
+		String video_link_w = linkyRepo.getMove(move).get(0).getWidth();
+
+		
 		List<PokeMove> pokemove1 = movesRepo.getPokeId(p1);
-		model.addAttribute("p1", pokemove1.get(0));
 		List<PokeMove> pokemove2 = movesRepo.getPokeId(p2);
-		model.addAttribute("p2", pokemove2.get(0));
+
+		PokeMove poke1 = pokemove1.get(0);
+		PokeMove poke2 = pokemove2.get(0);
+		
+		poke1.setMove_vid(video_link);
+		poke1.setMove_vid_w(video_link_w);
+		poke1.setMove_vid_h(video_link_h);
+
+
+		model.addAttribute("p1", poke1);
+		model.addAttribute("p2", poke2);
 		return "fight_poke2";
 	}
 
@@ -141,6 +174,7 @@ public class PokemonController {
 	public String fight22(@ModelAttribute("pokemoves") PokeMove pokemove) {
 		String poke_name = pokemove.getName();
 		String poke_vs_name = pokemove.getPoke_vs_name();
+		String poke_move_name = pokemove.getPoke_move1_name();
 
 		int dam =  (int)(pokemove.getPoke_move1_damage()*((Math.random() * pokemove.getPoke_move1_acc()*0.01)) ) ;
 
@@ -176,7 +210,7 @@ public class PokemonController {
 		}
 		/* System.out.println(p.getHp()); */
 		movesRepo.save(p);
-		String redirectUrl = "redirect:/fight?poke1="+poke_vs_name+"&poke2="+poke_name;
+		String redirectUrl = "redirect:/fight?poke1="+poke_vs_name+"&poke2="+poke_name+"&move="+poke_move_name;
 		return redirectUrl;
 	}
 

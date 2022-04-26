@@ -2,85 +2,124 @@
 {
     "move_name" :"Thunder Bolt",
     "pokemon":"Pikachu",
-    "link" : "https://youtube.com/embed/8GWbWd2AT8M"
+    "link" : "https://youtube.com/embed/8GWbWd2AT8M?autoplay=1",
+    "width":"500",
+    "height":"500"
 
 },
 {
     "move_name" :"Iron Tail",
     "pokemon":"Pikachu",
-    "link" : "https://www.youtube.com/embed/watch?v=GKNEavwXAjo"
+    "link" : "https://www.youtube.com/embed/KbAFVYH-c3Q?autoplay=1",
+    "width":"500",
+    "height":"500"
 },
 {
-    "move_name" :"Electro Web",
+    "move_name" :"Thunder",
     "pokemon":"Pikachu",
-    "link" : "https://www.youtube.com/embed/watch?v=453CgX8HWcA"
+    "link" : "https://www.youtube.com/embed/nQvDfFmMwyk?autoplay=1",
+    "width":"500",
+    "height":"500"
 },
 {
     "move_name" :"Quick Attack",
     "pokemon":"Pikachu",
-    "link" : "https://www.youtube.com/embed/watch?v=GKNEavwXAjo"
+    "link" : "https://www.youtube.com/embed/CRBydqcxl1Q?autoplay=1",
+    "width":"500",
+    "height":"500"
 },
 {
     "move_name" :"Ember",
     "pokemon":"Charmander",
-    "link" : ""
+    "link" : "https://www.youtube.com/embed/xIhuSFL6QF4?autoplay=1",
+    "width":"500",
+    "height":"500"
 
 },
 {
-    "move_name" :"Scratch",
+    "move_name" :"Skull bash",
     "pokemon":"Charmander",
-    "link" : ""
+    "link" : "https://www.youtube.com/embed/hgVlbBCWkRM?autoplay=1",
+    "width":"500",
+    "height":"500"
 },
 {
     "move_name" :"Fire Spin",
     "pokemon":"Charmander",
-    "link" : ""
+    "link" : "https://www.youtube.com/embed/mAsQ37T54Ag?autoplay=1",
+    "width":"500",
+    "height":"500"
 },
 {
-    "move_name" :"Quick Attack",
+    "move_name" :"Flame Thrower",
     "pokemon":"Charmander",
-    "link" : ""
+    "link" : "https://www.youtube.com/embed/Zf-X4ubL2ac?autoplay=1",
+    "width":"500",
+    "height":"500"
 },
 {
-    "move_name" :"Water Gun",
+    "move_name" :"Water Beam",
     "pokemon":"Squirtle",
-    "link" : ""
+    "link" : "https://www.youtube.com/embed/tpOUh4ts0YU?autoplay=1",
+    "width":"500",
+    "height":"500"
 
 },
 {
-    "move_name" :"Tail Whip",
+    "move_name" :"Withdraw",
     "pokemon":"Squirtle",
-    "link" : ""
+    "link" : "https://www.youtube.com/embed/o8xk9rl0v-o?autoplay=1",
+    "width":"500",
+    "height":"500"
 },
 {
-    "move_name" :"Water Pulse",
+    "move_name" :"Bubble Beam",
     "pokemon":"Squirtle",
-    "link" : ""
+    "link" : "https://www.youtube.com/embed/Uv8quXJskmI?autoplay=1",
+    "width":"500",
+    "height":"500"
 },
 {
-    "move_name" :"Aqua Tail",
+    "move_name" :"Hydro Pump",
     "pokemon":"Squirtle",
-    "link" : ""
+    "link" : "https://www.youtube.com/embed/uYU3WFA2bqA?autoplay=1",
+    "width":"500",
+    "height":"500"
 },
 {
     "move_name" :"Vine Whip",
     "pokemon":"Bulbasaur",
-    "link" : ""
+    "link" : "https://www.youtube.com/embed/u8ZzqppFw6g?autoplay=1",
+    "width":"500",
+    "height":"500"
 
+},
+{
+    "move_name" :"Solar Beam",
+    "pokemon":"Bulbasaur",
+    "link" : "https://www.youtube.com/embed/WveTh5Azf8k?autoplay=1",
+    "width":"500",
+    "height":"500"
+},
+{
+    "move_name" :"Whirl wind",
+    "pokemon":"Bulbasaur",
+    "link" : "https://www.youtube.com/embed/46yr_QtPKvc?autoplay=1",
+    "width":"500",
+    "height":"500"
 },
 {
     "move_name" :"Razor Leaf",
     "pokemon":"Bulbasaur",
-    "link" : ""
+    "link" : "https://www.youtube.com/embed/ilW9eNFov48?autoplay=1",
+    "width":500,
+    "height":500
 },
 {
-    "move_name" :"Poison Powder",
-    "pokemon":"Bulbasaur",
-    "link" : ""
-},
-{
-    "move_name" :"Seed Bomb",
-    "pokemon":"Bulbasaur",
-    "link" : ""
+    "move_name" :"1",
+    "pokemon":"",
+    "link" : "https://youtube.com/embed/RJKIrqO1Zas?&autoplay=1",
+    "width":0,
+    "height":0
 }
 ]

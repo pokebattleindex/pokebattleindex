@@ -8,6 +8,9 @@ public class link
     private String _id;
     private String move_name;
     private String pokemon;
+    private String width;
+    private String height;
+
 
     private String link;
 
@@ -35,5 +38,19 @@ public class link
     }
     public void setPokemon(String pokemon) {
         this.pokemon = pokemon;
+    }
+
+    public String getWidth() {
+        return width;
+    }
+    public void setWidth(String width) {
+        this.width = width;
+    }
+
+    public String getHeight() {
+        return height;
+    }
+    public void setHeight(String height) {
+        this.height = height;
     }
 }
