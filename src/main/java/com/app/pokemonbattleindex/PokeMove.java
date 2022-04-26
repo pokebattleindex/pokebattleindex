@@ -7,6 +7,8 @@ public class PokeMove{
     private int pid;
     private String name;
     private int hp;
+
+    private String poke_vs_name;
     
     private String poke_move1_name;
     private int poke_move1_damage;
@@ -131,4 +133,12 @@ public class PokeMove{
     public void setImg(String img) {
         this.img = img;
     }
+
+    public String getPoke_vs_name() {
+        return poke_vs_name;
+    }
+    public void setPoke_vs_name(String poke_vs_name) {
+        this.poke_vs_name = poke_vs_name;
+    }
+    
 }
