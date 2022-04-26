@@ -65,7 +65,7 @@ public class PokemonController {
 	public String fightPokemon(@RequestParam("p1") String p1,@RequestParam("p2") String p2,Model model) {
 		//Pikachu - p1
 		//Charmander - p2
-		t.s=p2;
+		//t.s=p2;
 		List<PokeMove> pokemove1 = movesRepo.getPokeId(p1);
 		model.addAttribute("p1", pokemove1.get(0));
 		List<PokeMove> pokemove2 = movesRepo.getPokeId(p2);
@@ -75,7 +75,7 @@ public class PokemonController {
 
 	@PostMapping("/fight")
 	public String fight2(@ModelAttribute("p1") PokeMove pokemove,@ModelAttribute("p2") PokeMove pokemove_2) {
-		System.out.println(t.s);
+		//System.out.println(t.s);
 		int dam = pokemove.getPoke_move1_damage() - (int)(pokemove.getPoke_move1_damage()*((Math.random() * pokemove.getPoke_move1_acc()*0.01)) ) ;
 		System.out.println(dam);
 		List<PokeMove> pokemove1 = movesRepo.getPokeId(pokemove_2.getName());
