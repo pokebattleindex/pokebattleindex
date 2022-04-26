@@ -11,7 +11,7 @@
   "poke_move2_name": "Iron Tail",
   "poke_move2_damage": 40,
   "poke_move2_acc": 100,
-  "poke_move3_name": "Splash",
+  "poke_move3_name": "Electro Web",
   "poke_move3_damage": 50,
   "poke_move3_acc": 65,
   "poke_move4_name": "Quick Attack",
@@ -38,4 +38,46 @@
   "poke_move4_damage": 30,
   "poke_move4_acc": 100,
   "img": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/004.png"
+},
+{
+  "_id": {
+    "$oid": "6262a31d25f47bae067a6882"
+  },
+  "id": 5,
+  "name": "Squirtle",
+  "hp": 200,
+  "poke_move1_name": "Water Gun",
+  "poke_move1_damage": 70,
+  "poke_move1_acc": 85,
+  "poke_move2_name": "Tail Whip",
+  "poke_move2_damage": 100,
+  "poke_move2_acc": 100,
+  "poke_move3_name": "Water Pulse",
+  "poke_move3_damage": 80,
+  "poke_move3_acc": 50,
+  "poke_move4_name": "Aqua Tail",
+  "poke_move4_damage": 30,
+  "poke_move4_acc": 100,
+  "img": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/007.png"
+},
+{
+  "_id": {
+    "$oid": "6262a31d25f47bae067a6883"
+  },
+  "id": 6,
+  "name": "Bulbasaur",
+  "hp": 200,
+  "poke_move1_name": "Vine Whip",
+  "poke_move1_damage": 70,
+  "poke_move1_acc": 85,
+  "poke_move2_name": "Razor Leaf",
+  "poke_move2_damage": 100,
+  "poke_move2_acc": 100,
+  "poke_move3_name": "Poison Powder",
+  "poke_move3_damage": 80,
+  "poke_move3_acc": 50,
+  "poke_move4_name": "Seed Bomb",
+  "poke_move4_damage": 30,
+  "poke_move4_acc": 100,
+  "img": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png"
 }]
