@@ -29,7 +29,12 @@
                 </h1>
                 <div class="grid grid-cols-2 gap-6 pt-10 mb-8 ">
                     <form action="#" th:action="@{/fight}" th:object="${p1}" method="post" class="cursor-pointer py-2  rounded-full border transform transition duration-100 bg-green-100/[.50]  hover:scale-110 hover:bg-green-100" >
+                        <div th:object="${p2}">
+                            <input type="hidden" name="name" th:value="${p2.name}">
+                        </div>
+
                         <input type="hidden" name="name" th:value="${p1.name}">
+                        <input type="hidden" name="name" th:value="${p2.name}">
                         <input type="hidden" name="poke_move1_name" th:value="${p1.poke_move1_name}">
                         <input type="hidden" name="poke_move1_damage" th:value="${p1.poke_move1_damage}">
                         <input type="hidden" name="poke_move1_acc" th:value="${p1.poke_move1_acc}">

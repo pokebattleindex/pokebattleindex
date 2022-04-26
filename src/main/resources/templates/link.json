@@ -1,0 +1,86 @@
+[
+{
+    "move_name" :"Thunder Bolt",
+    "pokemon":"Pikachu",
+    "link" : "https://youtube.com/embed/8GWbWd2AT8M"
+
+},
+{
+    "move_name" :"Iron Tail",
+    "pokemon":"Pikachu",
+    "link" : "https://www.youtube.com/embed/watch?v=GKNEavwXAjo"
+},
+{
+    "move_name" :"Electro Web",
+    "pokemon":"Pikachu",
+    "link" : "https://www.youtube.com/embed/watch?v=453CgX8HWcA"
+},
+{
+    "move_name" :"Quick Attack",
+    "pokemon":"Pikachu",
+    "link" : "https://www.youtube.com/embed/watch?v=GKNEavwXAjo"
+},
+{
+    "move_name" :"Ember",
+    "pokemon":"Charmander",
+    "link" : ""
+
+},
+{
+    "move_name" :"Scratch",
+    "pokemon":"Charmander",
+    "link" : ""
+},
+{
+    "move_name" :"Fire Spin",
+    "pokemon":"Charmander",
+    "link" : ""
+},
+{
+    "move_name" :"Quick Attack",
+    "pokemon":"Charmander",
+    "link" : ""
+},
+{
+    "move_name" :"Water Gun",
+    "pokemon":"Squirtle",
+    "link" : ""
+
+},
+{
+    "move_name" :"Tail Whip",
+    "pokemon":"Squirtle",
+    "link" : ""
+},
+{
+    "move_name" :"Water Pulse",
+    "pokemon":"Squirtle",
+    "link" : ""
+},
+{
+    "move_name" :"Aqua Tail",
+    "pokemon":"Squirtle",
+    "link" : ""
+},
+{
+    "move_name" :"Vine Whip",
+    "pokemon":"Bulbasaur",
+    "link" : ""
+
+},
+{
+    "move_name" :"Razor Leaf",
+    "pokemon":"Bulbasaur",
+    "link" : ""
+},
+{
+    "move_name" :"Poison Powder",
+    "pokemon":"Bulbasaur",
+    "link" : ""
+},
+{
+    "move_name" :"Seed Bomb",
+    "pokemon":"Bulbasaur",
+    "link" : ""
+}
+]

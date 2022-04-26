@@ -21,6 +21,8 @@ public class PokemonController {
 	public MovesRepo movesRepo;
 	@Autowired
 	public LeaderRepo leaderRepo;
+	@Autowired
+	public linkyRepo linkyRepo;
 
 	@GetMapping("/register")
 	public String register(Model model) {
@@ -60,23 +62,23 @@ public class PokemonController {
 	}
 
 	@GetMapping("/fight")
-	public String fightPokemon(Model model) {
-		List<PokeMove> pokemove1 = movesRepo.getPokeId("Pikachu");
+	public String fightPokemon(@RequestParam("p1") String p1,@RequestParam("p2") String p2,Model model) {
+		//Pikachu - p1
+		//Charmander - p2
+		t.s=p2;
+		List<PokeMove> pokemove1 = movesRepo.getPokeId(p1);
 		model.addAttribute("p1", pokemove1.get(0));
-		List<PokeMove> pokemove2 = movesRepo.getPokeId("Charmander");
+		List<PokeMove> pokemove2 = movesRepo.getPokeId(p2);
 		model.addAttribute("p2", pokemove2.get(0));
 		return "fight_poke1";
 	}
 
 	@PostMapping("/fight")
-	public String fight2(@ModelAttribute("p1") PokeMove pokemove) {
-		/* System.out.println(pokemove.getName());
-		System.out.println(pokemove.getPoke_move1_name());
-		System.out.println(pokemove.getPoke_move1_damage()); */
- 
+	public String fight2(@ModelAttribute("p1") PokeMove pokemove,@ModelAttribute("p2") PokeMove pokemove_2) {
+		System.out.println(t.s);
 		int dam = pokemove.getPoke_move1_damage() - (int)(pokemove.getPoke_move1_damage()*((Math.random() * pokemove.getPoke_move1_acc()*0.01)) ) ;
 		System.out.println(dam);
-		List<PokeMove> pokemove1 = movesRepo.getPokeId("Charmander");
+		List<PokeMove> pokemove1 = movesRepo.getPokeId(pokemove_2.getName());
 		PokeMove p = pokemove1.get(0);
 
 		/* System.out.println(p.getHp()); */
@@ -85,37 +87,33 @@ public class PokemonController {
 		}
 		else {
 			
-			List<PokeMove> pokemove2 = movesRepo.getPokeId("Pikachu");
+			List<PokeMove> pokemove2 = movesRepo.getPokeId(pokemove.getName());
 			PokeMove p2 = pokemove2.get(0);
 
 			Leader l = new Leader();
-			l.setWinner("Pikachu");
-			l.setLoser("Charmander");
+			l.setWinner(pokemove.getName());
+			l.setLoser(pokemove_2.getName());
 			l.setWinner_hp(p2.getHp());
 			l.setLoser_hp(0);
 			l.setWinner_move(pokemove.getPoke_move1_name());
 			l.setLoser_move(p.getPoke_move1_name());
 			leaderRepo.save(l);
-
 			p.setHp(200);
 			p2.setHp(200);
 			movesRepo.save(p);
 			movesRepo.save(p2);
-
-			
-
-
 			return "victory2";
 		}
 		/* System.out.println(p.getHp()); */
 		movesRepo.save(p);
 
 		/* System.out.println(p.getPoke_move1_name()); */
-		return "redirect:/fight2";
+		String redirectUrl = "redirect:/fight?p1="+pokemove.getName()+"&p2="+pokemove_2.getName();
+		return redirectUrl;
 	}
 
 	@GetMapping("/fight2")
-	public String fightPokemon2(Model model) {
+	public String fightPokemon2(@RequestParam("p1") String p1,@RequestParam("p2") String p2,Model model) {
 		List<PokeMove> pokemove1 = movesRepo.getPokeId("Pikachu");
 		model.addAttribute("p1", pokemove1.get(0));
 		List<PokeMove> pokemove2 = movesRepo.getPokeId("Charmander");
