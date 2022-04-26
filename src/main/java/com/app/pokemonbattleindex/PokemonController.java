@@ -61,6 +61,21 @@ public class PokemonController {
 		}
 	}
 
+	@GetMapping("/choose")
+	public String choose(Model model) {
+		model.addAttribute("poke", new PokeMove());
+		return "choose";
+	}
+
+	@PostMapping("/choose")
+	public String choose2(@ModelAttribute("poke") PokeMove poke) {
+		String poke_name = poke.getName();
+		String poke_vs_name = poke.getPoke_vs_name();
+		String redirectUrl = "redirect:/fight?poke1="+poke_name+"&poke2="+poke_vs_name;
+		return redirectUrl;
+	}
+
+
 	@GetMapping("/fight")
 	public String fightPokemon(@RequestParam("poke1") String p1,@RequestParam("poke2") String p2, Model model) {
 		//p1 = Pikachu

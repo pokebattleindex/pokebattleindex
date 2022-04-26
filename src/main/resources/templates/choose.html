@@ -3,8 +3,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Pokemon Battle Index</title>
 </head>
-<body class=" bg-slate-900">
-    <nav class="fixed z-10 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 px-10 sm:px-4 py-2.5 w-full">
+<body class="bg-slate-900">
+    
+    <div class="z-10 fixed ">
+    <nav class="bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 px-10 sm:px-4 py-2.5 w-screen">
         <div class="container flex flex-wrap justify-between items-center mx-auto md:px-36">
             <div class="flex items-center">
                 <a href="/" class="text-lg font-semibold text-gray-900">
@@ -22,25 +24,33 @@
             </div>
         </div>
     </nav>
-    <h1 class="text-6xl text-center font-extrabold p-5 pt-24 text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-orange-500 to-yellow-400">Pokemon Battle Index</h1>
-    <div class="flex justify-center items-center py-10 ">
-        <form action="#" th:action="@{/settings}" th:object="${user}" method="post" class="w-96 border p-10 rounded">
-            <div class="mb-6">
-                <label class="block mb-2 text-sm font-medium text-white ">Your email</label>
-                <input type="email" th:field="*{username}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="g_sec@pes.com" required>
-            </div>
-            <div class="mb-6">
-                <label class="block mb-2 text-sm font-medium text-white ">Your Trainer Name</label>
-                <input type="text" th:field="*{trainername}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Ash Ketchum" required>
-            </div>
-            <div class="mb-6">
-                <label for="password" class="block mb-2 text-sm font-medium text-white">Your password</label>
-                <input type="password" th:field="*{password}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
-            </div>
+    
+    <div class="justify-center px-36 py-20" >
+        <!-- <h5 class="text-xl text-center pt-10">Hello! </span></h5> -->
+        <form class="flex items-center text-4xl text-white" th:action="@{/choose}" th:object="${poke}"   method="post">
+            <!-- Select Pokemon -->
             
-            <input type="submit" value="Submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"></input>
+                <label class="text-white text-2xl font-semibold" >Select Pokemon 1</label>
+                <select th:field="*{name}" class="bg-white text-black border-2 border-gray-600 rounded-lg py-2.5 px-5 mr-2" id="pokemon">
+                    <option selected th:value="Bulbasaur">Bulbasaur</option>
+                    <option th:value="Squirtle">Squirtle</option>
+                    <option th:value="Charmander">Charmander</option>
+                    <option th:value="Pikachu">Pikachu</option>
+                </select>
+            
+                <label class="text-white text-2xl font-semibold">Select Pokemon 2</label>
+                <select th:field="*{poke_vs_name}" class="bg-white text-black border-2 border-gray-600 rounded-lg py-2.5 px-5 mr-2" id="pokemon">
+                    <option selected th:value="Squirtle">Squirtle</option>
+                    <option  th:value="Bulbasaur">Bulbasaur</option>
+                    <option th:value="Charmander">Charmander</option>
+                    <option th:value="Pikachu">Pikachu</option>
+                </select>
+            
+            <input type="submit" class="py-2.5 px-5 mr-2 text-sm font-medium text-white focus:outline-none  rounded-lg   hover:text-blue-400 focus:z-10 focus:ring-4 focus:ring-gray-200 " value="Submit">
+                    
+
         </form>
     </div>
-
-
+    </div>
+    
 </body>
