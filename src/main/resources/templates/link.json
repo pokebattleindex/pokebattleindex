@@ -112,8 +112,8 @@
     "move_name" :"Razor Leaf",
     "pokemon":"Bulbasaur",
     "link" : "https://www.youtube.com/embed/ilW9eNFov48?autoplay=1",
-    "width":500,
-    "height":500
+    "width":"400",
+    "height":"350"
 },
 {
     "move_name" :"1",

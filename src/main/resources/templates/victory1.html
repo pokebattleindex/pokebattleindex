@@ -4,7 +4,7 @@
 		<script src="https://cdn.tailwindcss.com"></script>
 		<title>PokeBattleIndex - All Pokemon</title>
 	</head>
-	<body class="bg-slate-900">
+	<body class="bg-slate-900" th:object="${p1}">
         <iframe width="0" height="0"
             src="https://youtu.be/c4mLOnrRu-I?list=PLPu-VPD0-8SkJ1UfHKTRdcGiYvHlaEb2d?&autoplay=1"
             frameborder="0" 
@@ -42,7 +42,9 @@
             <img src="https://i.makeagif.com/media/8-17-2015/jJ6j6F.gif" class="px-5 py-8"> -->
             
         </div>
-		<h1 class="text-2xl text-center text-white py-2" >Player 1 Wins</h1>
-        
+		<h1 class="text-3xl font-bold text-white text-center"><span th:text="${p1.name}" ></span><span> Wins!</span></h1>
+        <a href="#" class="flex items-center justify-center">
+			<img class="rounded-t-lg w-96" th:src="${p1.img}" alt="${p1.name}" />
+		</a>
         </body>
 </html>

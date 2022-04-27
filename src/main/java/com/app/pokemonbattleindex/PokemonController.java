@@ -136,7 +136,8 @@ public class PokemonController {
 			p2.setHp(200);
 			movesRepo.save(p);
 			movesRepo.save(p2);
-			return "victory2";
+			String redirectUrl2 = "redirect:/victory?poke1="+poke_name;
+			return redirectUrl2;
 		}
 		/* System.out.println(p.getHp()); */
 		movesRepo.save(p);
@@ -204,9 +205,8 @@ public class PokemonController {
 			p.setHp(200);
 			movesRepo.save(p);
 			movesRepo.save(p1);
-			
-			
-			return "victory1";
+			String redirectUrl1 = "redirect:/victory?poke1="+poke_name;
+			return redirectUrl1;
 		}
 		/* System.out.println(p.getHp()); */
 		movesRepo.save(p);
@@ -300,4 +300,13 @@ public class PokemonController {
 		userRepo.save(u);
 		return "redirect:/";
 	}
+	@GetMapping("/victory")
+	public String vic(@RequestParam("poke1") String p1,Model model){
+		List<Pokemon> u1 = pokeRepo.getPokebyName(p1);
+		Pokemon p = u1.get(0);
+		model.addAttribute("p1", p);
+		return "victory1";
+	}
 }
+
+
