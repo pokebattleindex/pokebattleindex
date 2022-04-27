@@ -4,19 +4,16 @@
     <title>Pokemon Battle Index</title>
 </head>
 <body class="px-36 bg-slate-900">
-    <iframe width="0" height="0"
-    src="https://youtube.com/embed/RJKIrqO1Zas?&autoplay=1"
-    frameborder="0" 
-    allow="autoplay">
-    </iframe>
 
     <h1 class="text-6xl text-center font-extrabold p-5 py-10 text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-orange-500 to-yellow-400">Pokemon Battle Index</h1>
     <!-- <h1>Fight</h1> -->
-    <iframe th:width="${p1.move_vid_w}" th:height="${p1.move_vid_h}"
-    th:src="${p1.move_vid}"
-    frameborder="0" 
-    allow="autoplay">
-    </iframe>
+    <div class="absolute right-[550px] top-40">
+        <iframe th:width="${p1.move_vid_w}" th:height="${p1.move_vid_h}"
+        th:src="${p1.move_vid}"
+        frameborder="0" 
+        allow="autoplay">
+        </iframe>
+    </div>
     
 
 
